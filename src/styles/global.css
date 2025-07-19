@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+    --color-accent: #7a9c3e;
+    --color-accent-secondary: #374181;
+}
+
+body {
+  font-family: 'Inter Variable', sans-serif;
+}
+
+@utility max-w-app {
+  @apply max-w-5xl;
+}
+
+a {
+  @apply font-medium hover:text-accent;
+}
