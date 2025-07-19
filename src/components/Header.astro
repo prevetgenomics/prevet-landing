@@ -1,0 +1,51 @@
+---
+import IconX from "../assets/icons/IconX.svg";
+import IconMenu from "../assets/icons/IconMenu.svg";
+import Logo from "../components/Logo.astro";
+---
+
+<header>
+    <nav class="flex flex-wrap justify-between items-center mx-auto max-w-app p-6">
+        <Logo />
+        <button id="menu-btn" type="button" class="sm:hidden" aria-controls="menu-items" aria-expanded="false">
+            <IconMenu id="menu-icon" />
+            <IconX id="close-icon" class="hidden" />    
+        </button>
+        <div id="menu-items" class="hidden w-full sm:flex sm:w-auto">
+            <ul class="flex flex-col sm:flex-row gap-4 items-center pt-6 pb-2 sm:py-0">
+                <li>
+                    <a href="/blog">Blog</a>
+                </li>
+                <li>
+                    <a href="/nosotros">Nosotros</a>
+                </li>
+                <li>
+                    <a href="/contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<script>
+  function toggleNav() {
+    const menuBtn = document.querySelector("#menu-btn");
+    const menuItems = document.querySelector("#menu-items");
+    const menuIcon = document.querySelector("#menu-icon");
+    const closeIcon = document.querySelector("#close-icon");
+
+    if (!menuBtn || !menuItems || !menuIcon || !closeIcon) return;
+
+    menuBtn.addEventListener("click", () => {
+      const openMenu = menuBtn.getAttribute("aria-expanded") === "true";
+
+      menuBtn.setAttribute("aria-expanded", openMenu ? "false" : "true");
+
+      menuItems.classList.toggle("hidden");
+      menuIcon.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+    });
+  }
+
+  toggleNav();
+</script>

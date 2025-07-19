@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import '@fontsource-variable/inter';
+import Header from '../components/Header.astro';
 
 const title = "PreVet"
 const { subtitle } = Astro.props
@@ -19,10 +20,9 @@ const { subtitle } = Astro.props
 		<title>{title}{subtitle && ` | ${subtitle}`}</title>
 	</head>
 	<body>
+		<Header />
 		<main>
-			<header class="max-w-app mx-auto flex flex-col justify-center items-center pt-8">
-				<slot />
-			</header>
+			<slot />
 		</main>
 	</body>
 </html>
