@@ -16,3 +16,7 @@ body {
 a {
   @apply font-medium hover:text-accent;
 }
+
+.main-container {
+  @apply max-w-app mx-auto p-6
+}
