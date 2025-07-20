@@ -1,0 +1,22 @@
+---
+import Logo from "../components/Logo.astro";
+---
+
+<footer class="max-w-app mx-auto p-6">
+    <div class="flex flex-col sm:flex-row">
+        <Logo />
+        <div class="flex flex-col sm:flex-row w-full justify-around">
+            <nav class="flex flex-col gap-4 sm:pt-1 pt-8">
+                <h3 class="text-base font-semibold">Redes Sociales</h3>
+                <a href="https://www.linkedin.com/company/prevet-genomics" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/prevetgenomics/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </nav>
+            <nav class="flex flex-col gap-4 sm:pt-1 pt-8">
+                <h3 class="text-base font-semibold">Navegación</h3>
+                <a href="/blog">Blog</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+        </div>
+    </div>
+</footer>
