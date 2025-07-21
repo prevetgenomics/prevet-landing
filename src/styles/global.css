@@ -1,8 +1,10 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
     --color-accent: #7a9c3e;
     --color-accent-secondary: #374181;
+    --color-section: #f1f1f1;
 }
 
 body {
@@ -13,10 +15,18 @@ body {
   @apply max-w-5xl;
 }
 
-a {
+li > a {
   @apply font-medium hover:text-accent;
 }
 
+h1 {
+  @apply text-2xl font-bold;
+}
+
+h2 {
+  @apply text-base font-semibold;
+}
+
 .main-container {
-  @apply max-w-app mx-auto p-6
+  @apply max-w-app mx-auto p-6 
 }
