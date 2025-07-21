@@ -1,11 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Logo from '../components/Logo.astro';
+import Section from '../layouts/Section.astro';
+import QAItem from "../components/QAItem.astro"
+import ContactButton from '../components/ContactButton.astro';
+import { SITE } from '../config'; 
 ---
 
-<Layout>
-	<Logo />
-	<p class="text-md p-4">
-		En construcción ...
-	</p>
+<Layout subtitle={SITE.title}>
+    <!-- Hero -->
+    <section>  
+    </section>
+    
+	<!-- Q&A -->
+    <Section currentColor="bg-accent">
+		<div class="flex justify-center">
+			<h1 class="text-black">
+				Q&A
+			</h1>
+		</div>
+		<div class="flex flex-col py-4 mx-auto">
+			<QAItem
+				className="border-t-1"
+				question="Pregunta desde el puesto del veterinario"
+				answer="Una respuesta elavorada"
+			/>
+			<QAItem
+				question="Pregunta desde el puesto del cliente"
+				answer="Una respuesta elavorada"
+			/>
+		</div>
+    </Section>
+	
+    <!-- Blogs -->
+    <Section previousColor="bg-accent" currentColor="bg-accent-secondary">
+    </Section>
+    
+	<!-- Contactanos -->
+    <Section previousColor="bg-accent-secondary" currentColor="bg-section">
+		<div class="flex flex-col justify-center items-center py-4 gap-6">
+			<h1>
+				¿Te interesa ser parte?
+			</h1>
+			<ContactButton />
+		</div>
+    </Section>
 </Layout>
