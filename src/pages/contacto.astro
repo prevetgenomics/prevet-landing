@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../layouts/Section.astro';
+import FormInput from '../components/FormInput.astro';
+---
+
+<Layout subtitle="Contacto">
+    <Section>
+        <div class="flex flex-col justify-center items-center py-4 space-y-4">
+            <h1>
+                Contacto
+            </h1>
+            <div class="flex flex-col rounded-md max-w-sm">                
+                <form class="space-y-2">
+                    <FormInput label="Nombre" id="name" name="name" type="text" placeholder="Carmen Gloria" require=true />
+                    <FormInput label="Veterinaria" id="veterinary" name="veterinary" type="text" placeholder="Veterinaria Firulais" />
+                    <FormInput label="Correo electrónico" id="email" name="email" type="email" placeholder="usuario@ejemplo.com" require=true />
+                    <div>
+                        <input class="cursor-pointer" id="checkbox" name="motive-checkbox" type="checkbox" />
+                        <label class="text-sm text-gray-600 font-medium">Estoy interesad@ en la venta del kit</label>
+                    </div>
+                    <FormInput label="Otro motivo" id="motive" name="motive" type="text" placeholder="Indica tu motivo" />
+                    <div class="pt-3">
+                      <button type="submit" class="bg-accent-secondary hover:bg-accent-secondary/90 text-white p-2 rounded-md text-sm font-medium w-full cursor-pointer">
+                        Crear
+                      </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </Section>
+    <Section previous="bg-white" currentColor="bg-section" />
+</Layout>
