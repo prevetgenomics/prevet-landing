@@ -8,11 +8,33 @@ import { SITE } from '../config';
 
 <Layout subtitle={SITE.title}>
     <!-- Hero -->
-    <section>  
+	<section class="flex main-container">
+		<div class="grid grid-cols-1 sm:grid-cols-2 py-4">
+			<div class="col-span-1">
+				<div class="flex flex-col space-y-4">
+					<p class="text-3xl font-extrabold text-balance">
+						Porque importa la salud de tu mascota
+					</p>
+					<span class="text-balance text-lg">
+						Combinando marcadores biológicos e inteligencia artificial <span class="text-accent-secondary font-bold">anticípate al cáncer</span> antes de que sea demasiado tarde
+					</span>
+					<ContactButton />
+				</div>
+			</div>
+			<div class="col-span-1">
+				<div class="bg-gray-400 p-12">
+					<p class="text-balance">
+						Un perro dibujo de trazos de un perro, al costado un DNA vertical que baja a horizontal hasta la siguiente sección
+					</p>
+				</div>
+			</div>
+		</div>
     </section>
     
+	<Section previousColor="bg-white" currentColor="bg-section" />
+
 	<!-- Q&A -->
-    <Section currentColor="bg-accent">
+    <Section previousColor="bg-section" currentColor="bg-accent">
 		<div class="flex justify-center">
 			<h1 class="text-black">
 				Q&A
