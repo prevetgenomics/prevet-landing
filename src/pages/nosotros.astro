@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../layouts/Section.astro';
+import FounderCard from '../components/FounderCard.astro';
+---
+
+<Layout subtitle="Nostros">
+    <Section currentColor="bg-section">
+        <div class="flex flex-col mx-auto justify-center items-center prose py-4">
+            <h1 class="mb-0">
+                Nosotros
+            </h1>
+            <p>
+                <strong>Ejemplo de synthego (que hacen)</strong>
+                Synthego is a pioneering force in the biotechnology industry, dedicated to advancing the frontiers of CRISPR cell and gene therapies through cutting-edge CRISPR technology and expertise. 
+            </p>
+            <p>
+                <strong>Acá otro texto de misión y vision de la SpA</strong>
+                Our mission is to provide unparalleled access to best-in-class CRISPR solutions at scale, empowering agility in life science research and development from discovery through clinical trials.
+            </p>
+        </div>
+    </Section>
+    <Section previousColor="bg-section" currentColor="bg-white">
+        <div class="flex flex-col mx-auto justify-center items-center max-w-prose py-4">
+            <h1 class="mb-5">
+                Quiénes somos
+            </h1>
+            <div class="flex flex-col sm:flex-row w-full justify-between">
+                <FounderCard 
+                    name="Joaquín Gutierrez Benavente"
+                    image="" 
+                    title="Cofundador y CEO" 
+                    description="Aca la idea es agregar algo motivador, que los describa tal vez como sus roles de PreVet, o algo piensan sobre el mercado o la importancia de las mascotas. En verrdad tambien podría ser sobre su carrera como personas Ojala algo que no esté en LinkedIn, porque para eso esta el perfil con link"
+                    link="https://www.linkedin.com/in/joaqu%C3%ADn-gutierrez-benavente-072229158/" 
+                    />
+                <FounderCard 
+                    name="Felipe Sepúlveda Carrasco"
+                    image="" 
+                    title="Cofundador" 
+                    description="Aca la idea es agregar algo motivador, que los describa tal vez como sus roles de PreVet, o algo piensan sobre el mercado o la importancia de las mascotas. En verrdad tambien podría ser sobre su carrera como personas Ojala algo que no esté en LinkedIn, porque para eso esta el perfil con link"
+                    link="https://www.linkedin.com/in/felipe-sep%C3%BAlveda-carrasco-64875493/"
+                    />
+            </div>
+        </div>
+    </Section>
+    <Section previousColor="bg-white" currentColor="bg-section" />
+</Layout>
