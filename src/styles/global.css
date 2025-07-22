@@ -1,18 +1,36 @@
 @import "tailwindcss";
+@import "./typography.css";
 
 @theme {
-    --color-accent: #7a9c3e;
-    --color-accent-secondary: #374181;
+  --color-accent: #7a9c3e;
+  --color-accent-secondary: #374181;
+  --color-section: #e5e7eb;
 }
 
-body {
-  font-family: 'Inter Variable', sans-serif;
+@layer base {
+  body {
+    font-family: 'Inter Variable', sans-serif;
+  }
+
+  h1 {
+    @apply text-2xl font-bold;
+  }
+
+  h2 {
+    @apply text-base font-semibold;
+  }
+
+  li > a:not([class]) {
+    @apply font-medium hover:text-accent;
+  }
 }
 
-@utility max-w-app {
-  @apply max-w-5xl;
-}
+@layer utilities {
+  .max-w-app {
+    @apply max-w-5xl;
+  }
 
-a {
-  @apply font-medium hover:text-accent;
+  .main-container {
+    @apply max-w-5xl mx-auto p-6;
+  }
 }

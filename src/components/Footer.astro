@@ -1,0 +1,51 @@
+---
+import Logo from "../components/Logo.astro";
+import SocialLink from '../components/SocialLink.astro';
+import IconLinkedIn from "../assets/icons/IconLinkedIn.svg";
+import IconInstagram from "../assets/icons/IconInstagram.svg";
+---
+
+<div class="bg-section">
+    <div class="rounded-t-3xl bg-white">
+        <footer class="main-container">
+            <div class="flex flex-col py-4 sm:flex-row">
+                <Logo />
+                <div class="flex flex-col sm:flex-row w-full justify-around">
+                    <nav class="flex flex-col gap-4 sm:pt-1 pt-6">
+                        <h2>Redes Sociales</h2>
+                        <ul class="flex flex-col gap-4">
+                            <li>
+                                <SocialLink 
+                                    content="LinkedIn"
+                                    icon={IconLinkedIn}
+                                    link="https://www.linkedin.com/company/prevet-genomics"
+                                />
+                            </li>
+                            <li>
+                                <SocialLink 
+                                    content="Instagram"
+                                    icon={IconInstagram}
+                                    link="https://www.instagram.com/prevetgenomics/"
+                                />
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="flex flex-col gap-4 sm:pt-1 pt-6">
+                        <h2>Navegación</h2>
+                        <ul class="flex flex-col gap-4">
+                            <li>
+                                <a href="/blog">Blog</a>
+                            </li>
+                            <li>
+                                <a href="/nosotros">Nosotros</a>
+                            </li>
+                            <li>
+                                <a href="/contacto">Contacto</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+---
+const { previousColor, currentColor } = Astro.props
+---
+
+<div class={previousColor}>
+    <div class=`rounded-t-3xl ${currentColor}`>
+        <section class="main-container">
+            <slot />
+        </section>
+    </div>
+</div>

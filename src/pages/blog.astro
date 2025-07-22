@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from '../layouts/Section.astro';
+import DateTime from '../components/DateTime.astro';
+import ArrowLink from '../components/ArrowLink.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout subtitle="Blogs">
+    <Section>
+		<div class="flex justify-center">
+			<h1 class="text-black">
+				Blogs
+			</h1>
+		</div> 
+		<ul class="grid gap-12 md:gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-4 max-w-sm md:max-w-2xl mx-auto lg:max-w-none lg:mx-0">
+			{posts.map(post => (
+			<li class="text-black space-y-4 text-center flex flex-col items-center md:items-start md:text-left">
+				<h2 class="text-xl font-semibold mb-2">
+					{post.data.title}
+				</h2>
+				<DateTime date={post.data.pubDate} className="text-gray-500" />
+				<p class="text-md text-black font-medium text-balance">
+					{post.data.description}
+				</p>
+				<ArrowLink content="Leer más" link={`/blog/${post.data.slug}`} />
+			</li>
+			))}
+		</ul>
+    </Section>
+
+    <Section previous="bg-white" currentColor="bg-section" />
+</Layout>

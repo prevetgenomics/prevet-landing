@@ -1,0 +1,19 @@
+---
+import SocialLink from '../components/SocialLink.astro';
+import IconLinkedIn from '../assets/icons/IconLinkedIn.svg';
+
+const { name, image, title, description, link } = Astro.props
+---
+
+<article class="flex flex-col w-72">
+    <img alt={name} class="object-cover aspect-square w-full rounded-md" src={image} />
+    <h2 class="flex justify-center my-1">
+        {title}
+    </h2>
+    <span class="my-1">
+        <SocialLink content={name} icon={IconLinkedIn} link={link} />
+    </span>
+    <p class="text-gray-800 mt-4">
+        {description}
+    </p>
+</article>

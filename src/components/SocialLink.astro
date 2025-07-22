@@ -1,0 +1,8 @@
+---
+const { content, icon: Icon, link } = Astro.props
+---
+
+<a class="flex gap-1 group w-fit hover:text-accent font-medium" href={link} target="_blank" rel="noopener noreferrer">
+    <Icon class="group-hover:rotate-12" />
+    {content}
+</a>

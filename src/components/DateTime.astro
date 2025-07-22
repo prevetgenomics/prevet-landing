@@ -1,0 +1,13 @@
+---
+const { date, className } = Astro.props
+
+const FormatDate = new Date(date).toLocaleDateString('es-CL', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+})
+---
+
+<span class=`text-sm block mb-2 ${className}`>
+  {FormatDate}
+</span>

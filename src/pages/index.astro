@@ -1,11 +1,86 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Logo from '../components/Logo.astro';
+import Section from '../layouts/Section.astro';
+import QAItem from "../components/QAItem.astro"
+import ContactButton from '../components/ContactButton.astro';
+import DateTime from '../components/DateTime.astro';
+import ArrowLink from '../components/ArrowLink.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../config'; 
+
+const posts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
-<Layout>
-	<Logo />
-	<p class="text-md p-4">
-		En construcción ...
-	</p>
+<Layout subtitle={SITE.title}>
+    <!-- Hero -->
+	<section class="flex main-container min-h-[50vh]">
+		<div class="flex mx-auto max-w-lg items-center">
+			<div class="flex flex-col space-y-4 place-items-center">
+				<h1 class="text-3xl font-extrabold text-center">
+					Porque importa la salud de tu mascota
+				</h1>
+				<p class="text-balance text-lg text-center">
+					Combinando marcadores biológicos e inteligencia artificial <span class="text-accent font-bold">anticípate al cáncer</span> antes de que sea demasiado tarde
+				</p>
+				<ContactButton />
+			</div>
+		</div>
+    </section>
+    
+	<Section previousColor="bg-white" currentColor="bg-section" />
+
+	<!-- Blogs -->
+    <Section previousColor="bg-section" currentColor="bg-accent">
+		<div class="flex justify-center">
+			<h1 class="text-white">
+				Nuestros blogs
+			</h1>
+		</div> 
+		<ul class="grid gap-10 lg:gap-6 grid-cols-1 lg:grid-cols-3 py-4 max-w-lg mx-auto lg:max-w-none lg:mx-0">
+			{posts.map(post => (
+			<li class="text-white space-y-4">
+				<h2 class="text-xl font-semibold mb-2">
+					{post.data.title}
+				</h2>
+				<DateTime date={post.data.pubDate} className="text-gray-200" />
+				<p class="text-md text-white font-medium text-balance">
+					{post.data.description}
+				</p>
+				<ArrowLink content="Leer más" link={`/blog/${post.data.slug}`} />
+			</li>
+			))}
+		</ul>
+	</Section>
+	
+	<!-- Q&A -->
+	<Section previousColor="bg-accent" currentColor="bg-accent-secondary">
+		<div class="flex justify-center">
+			<h1 class="text-white">
+				Q&A
+			</h1>
+		</div>
+		<div class="flex flex-col py-4 mx-auto">
+			<QAItem
+				className="border-t-1"
+				question="Pregunta desde el puesto del veterinario, es una pregunta larga larga"
+				answer="Una respuesta elavorada"
+			/>
+			<QAItem
+				question="Pregunta desde el puesto del cliente"
+				answer="Una respuesta elavorada"
+			/>
+		</div>
+	</Section>
+    
+	<!-- Contactanos -->
+    <Section previousColor="bg-accent-secondary" currentColor="bg-section">
+		<div class="flex flex-col justify-center items-center py-4 gap-6">
+			<h1>
+				¿Te interesa ser parte?
+			</h1>
+			<ContactButton />
+		</div>
+    </Section>
 </Layout>

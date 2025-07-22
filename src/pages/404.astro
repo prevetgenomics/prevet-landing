@@ -1,10 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Section from '../layouts/Section.astro';
+import ArrowLink from '../components/ArrowLink.astro';
 ---
 
-<Layout subtitle="Not Found">
-    <p class="text-2xl text-accent-secondary font-bold p-2">
-        ¿Estás perdido?
-    </p>
-    <a href="/">Volver</a>
+<Layout subtitle="¿Estás perdido?">
+    <Section currentColor="bg-section">
+        <div class="flex flex-col justify-center items-center min-h-[50vh] gap-6">
+            <h1 class="text-3xl font-extrabold text-center">
+                ¿Estás perdido?
+            </h1>
+            <ArrowLink content="Volver" link="/"/>
+        </div>
+    </Section>
 </Layout>

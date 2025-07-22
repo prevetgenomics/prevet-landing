@@ -1,0 +1,13 @@
+---
+import IconArrowUpRight from '../assets/icons/IconArrowUpRight.svg';
+
+const { content, link } = Astro.props
+---
+
+<a 
+    class="group flex gap-1 hover:underline w-fit"
+    href={link}
+    >
+    {content} 
+    <IconArrowUpRight class="group-hover:translate-x-1 group-hover:-translate-y-1 duration-200" />
+</a>
