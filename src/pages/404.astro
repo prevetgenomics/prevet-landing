@@ -1,15 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Section from '../layouts/Section.astro';
+import ArrowLink from '../components/ArrowLink.astro';
 ---
 
 <Layout subtitle="¿Estás perdido?">
     <Section currentColor="bg-section">
-        <div class="flex flex-col justify-center items-center">
-            <h1>
+        <div class="flex flex-col justify-center items-center min-h-[50vh] gap-6">
+            <h1 class="text-3xl font-extrabold text-center">
                 ¿Estás perdido?
             </h1>
-            <a href="/" class="mt-4 font-medium hover:text-accent">Volver</a>
+            <ArrowLink content="Volver" link="/"/>
         </div>
     </Section>
 </Layout>

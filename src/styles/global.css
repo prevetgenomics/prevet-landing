@@ -4,7 +4,7 @@
 @theme {
   --color-accent: #7a9c3e;
   --color-accent-secondary: #374181;
-  --color-section: #f1f1f1;
+  --color-section: #e5e7eb;
 }
 
 @layer base {
