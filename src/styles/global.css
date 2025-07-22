@@ -20,7 +20,7 @@
     @apply text-base font-semibold;
   }
 
-  li > a {
+  li > a:not([class]) {
     @apply font-medium hover:text-accent;
   }
 }
