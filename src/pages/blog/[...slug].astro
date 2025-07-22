@@ -23,7 +23,7 @@ const { Content } = await render(post);
       <h1 class="flex justify-center mb-8 text-wrap">
         {post.data.title}
       </h1>
-      <div class="flex justify-between mb-1">
+      <div class="flex flex-col sm:flex-row justify-between items-center sm:items-baseline space-y-2 mb-1">
         <p>
           Escrito por {post.data.author}
         </p>
