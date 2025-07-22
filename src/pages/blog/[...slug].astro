@@ -1,0 +1,47 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Section from '../../layouts/Section.astro';
+import DateTime from '../../components/DateTime.astro';
+import ArrowLink from '../../components/ArrowLink.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout subtitle=`Blog - ${post.data.title}`>
+  <Section>
+    <article class="max-w-prose mx-auto py-4">
+      <h1 class="flex justify-center mb-8 text-wrap">
+        {post.data.title}
+      </h1>
+      <div class="flex justify-between mb-1">
+        <p>
+          Escrito por {post.data.author}
+        </p>
+        <DateTime date={post.data.pubDate} />
+      </div>
+      <hr class="mb-5 text-accent border-1 rounded-2xl" />
+      
+      <div class="prose">
+        <Content />
+      </div>
+      <div class="flex justify-center pt-6">
+        <ArrowLink
+          content="Todas las publicaciones" 
+          link="/blog" 
+          />
+      </div>
+    </article>
+  </Section>
+
+  <Section currentColor="bg-section" />
+</Layout>

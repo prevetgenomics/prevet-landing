@@ -1,0 +1,15 @@
+@plugin "@tailwindcss/typography";
+
+@layer utilities {
+  .prose h2 {
+    @apply my-6
+  }
+  
+  .prose ul,
+  .prose ol,
+  .prose li {
+    @apply pl-0 ml-0 list-inside
+  }
+}
+
+
