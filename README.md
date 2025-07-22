@@ -26,7 +26,9 @@ cp src/data/blog/_template.md src/data/blog/mi_post.md
 2. Ir a la sección de Compute (workers)
 3. Importar repositorio prevet-landing
 4. nombre: prevet-landing, build command: pnpm build
-5. ToDo
+5. Desde el dashboard ir al menú del dominio y luego en la sección del costado ir a DNS y entrar en Records 
+6. Crear un record CNAME, donde el root sea @ y el target sea en link del worker el cual aparece en los settings del worker. (Compute (Workers) -> Settings -> Domains & Route, ejemplo `prevet-landing.myuser.workers.dev
+7. Listo
 
 ### Para desarrollo de la web
 
