@@ -19,7 +19,7 @@ const posts = (await getCollection('blog')).sort(
 		</div> 
 		<ul class="grid gap-12 md:gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-4 max-w-sm md:max-w-2xl mx-auto lg:max-w-none lg:mx-0">
 			{posts.map(post => (
-			<li class="text-black space-y-4 text-center flex flex-col items-center md:items-start md:text-left">
+			<li class="text-black space-y-4 flex flex-col items-start text-left">
 				<h2 class="text-xl font-semibold mb-2">
 					{post.data.title}
 				</h2>
