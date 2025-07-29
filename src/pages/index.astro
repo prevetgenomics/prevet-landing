@@ -22,7 +22,7 @@ const posts = (await getCollection('blog'))
 					Porque importa la salud de tu mascota
 				</h1>
 				<p class="text-balance text-lg text-center">
-					Combinando marcadores biológicos e inteligencia artificial <span class="text-accent font-bold">anticípate al cáncer</span> antes de que sea demasiado tarde
+					Combinando marcadores biológicos e inteligencia artificial <span class="text-accent-secondary font-bold">anticípate al cáncer</span> antes de que sea demasiado tarde
 				</p>
 				<ContactButton />
 			</div>
@@ -34,18 +34,18 @@ const posts = (await getCollection('blog'))
 	<!-- Blogs -->
     <Section previousColor="bg-section" currentColor="bg-accent">
 		<div class="flex justify-center">
-			<h1 class="text-white">
+			<h1 class="text-black">
 				Nuestros blogs
 			</h1>
 		</div> 
 		<ul class="grid gap-10 lg:gap-6 grid-cols-1 lg:grid-cols-3 py-4 max-w-lg mx-auto lg:max-w-none lg:mx-0">
 			{posts.map(post => (
-			<li class="text-white space-y-4">
+			<li class="text-black space-y-4">
 				<h2 class="text-xl font-semibold mb-2">
 					{post.data.title}
 				</h2>
-				<DateTime date={post.data.pubDate} className="text-gray-200" />
-				<p class="text-md text-white font-medium text-balance">
+				<DateTime date={post.data.pubDate} className="text-gray-900" />
+				<p class="text-md text-black font-medium text-balance">
 					{post.data.description}
 				</p>
 				<ArrowLink content="Leer más" link={`/blog/${post.data.slug}`} />
