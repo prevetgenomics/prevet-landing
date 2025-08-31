@@ -1,11 +1,11 @@
 ---
-const { date, className } = Astro.props
+const { date, className } = Astro.props;
 
-const FormatDate = new Date(date).toLocaleDateString('es-CL', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric',
-})
+const FormatDate = new Date(date).toLocaleDateString("es-CL", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
 ---
 
 <span class=`items-center text-sm flex ${className}`>

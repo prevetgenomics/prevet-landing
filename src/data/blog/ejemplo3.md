@@ -12,12 +12,15 @@ slug: "molde-de-ejemplo-copia"
 
 Tambien sería buena idea agregar una imagen al comienzo porque se ve muy muy plano, ojalá si :) para que sea más llamativo PERO NO CON IA Xd que se está mal visto, es como sin esfuerzo
 
-#### 3. titulo con 4 #
+#### 3. titulo con 4
+
 - Lista uno con [hipervinculo a google](https://google.com)
+
 1. numeración uno
 
 **negrita**
 _italica_
 
 > una cita muy importante
->> cita dentro
+>
+> > cita dentro

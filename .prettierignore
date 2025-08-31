@@ -1,0 +1,10 @@
+/*
+
+!/public
+!/src/
+!.prettierrc
+!astro.config.mjs
+!package.json
+!tsconfig.json
+
+/src/data

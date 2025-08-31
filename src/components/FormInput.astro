@@ -1,15 +1,15 @@
 ---
-const { label, id, type, placeholder, name, required = false } = Astro.props
+const { label, id, type, placeholder, name, required = false } = Astro.props;
 ---
 
-<label class="text-sm text-gray-600 font-medium">
-    {label}
+<label class="text-sm font-medium text-gray-600">
+  {label}
 </label>
 <input
-    id={id}
-    name={name || id}
-    type={type}
-    placeholder={placeholder}
-    class={`border border-gray-300 placeholder-gray-400 w-full focus:border-accent-secondary focus:ring-accent-secondary hover:border-accent-secondary p-2 rounded-md text-sm outline-none`}
-    required={required}
+  id={id}
+  name={name || id}
+  type={type}
+  placeholder={placeholder}
+  class={`border border-gray-300 placeholder-gray-400 w-full focus:border-accent-secondary focus:ring-accent-secondary hover:border-accent-secondary p-2 rounded-md text-sm outline-none`}
+  required={required}
 />

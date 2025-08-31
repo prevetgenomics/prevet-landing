@@ -4,9 +4,11 @@ import IconX from "../assets/icons/IconX.svg";
 const { question, answer, className = "", textColor = "white" } = Astro.props;
 ---
 
-<details class={`prose group mx-auto w-full border-b border-white py-4 ${className}`}>
+<details
+  class={`prose group mx-auto w-full border-b border-white py-4 ${className}`}
+>
   <summary
-    class="flex justify-between items-center cursor-pointer font-semibold text-base"
+    class="flex cursor-pointer items-center justify-between text-base font-semibold"
   >
     <span class=`text-${textColor}`>{question}</span>
     <span class=`transition-transform group-open:rotate-45 text-${textColor}`>

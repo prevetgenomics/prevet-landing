@@ -5,26 +5,35 @@ import Logo from "../components/Logo.astro";
 ---
 
 <header>
-    <nav class="flex flex-wrap justify-between items-center main-container">
-        <Logo />
-        <button aria-label="menu" id="menu-btn" type="button" class="sm:hidden" aria-controls="menu-items" aria-expanded="false">
-            <IconMenu id="menu-icon" />
-            <IconX id="close-icon" class="hidden" />    
-        </button>
-        <div id="menu-items" class="hidden w-full sm:flex sm:w-auto">
-            <ul class="flex flex-col sm:flex-row gap-4 items-center pt-6 pb-2 sm:py-0">
-                <li>
-                    <a href="/blog">Blog</a>
-                </li>
-                <li>
-                    <a href="/nosotros">Nosotros</a>
-                </li>
-                <li>
-                    <a href="/contacto">Contacto</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="main-container flex flex-wrap items-center justify-between">
+    <Logo />
+    <button
+      aria-label="menu"
+      id="menu-btn"
+      type="button"
+      class="sm:hidden"
+      aria-controls="menu-items"
+      aria-expanded="false"
+    >
+      <IconMenu id="menu-icon" />
+      <IconX id="close-icon" class="hidden" />
+    </button>
+    <div id="menu-items" class="hidden w-full sm:flex sm:w-auto">
+      <ul
+        class="flex flex-col items-center gap-4 pt-6 pb-2 sm:flex-row sm:py-0"
+      >
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        <li>
+          <a href="/nosotros">Nosotros</a>
+        </li>
+        <li>
+          <a href="/contacto">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>
 
 <script>

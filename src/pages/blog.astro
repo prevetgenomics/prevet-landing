@@ -1,37 +1,37 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Section from '../layouts/Section.astro';
-import DateTime from '../components/DateTime.astro';
-import ArrowLink from '../components/ArrowLink.astro';
-import { getCollection } from 'astro:content';
+import Layout from "../layouts/Layout.astro";
+import Section from "../layouts/Section.astro";
+import DateTime from "../components/DateTime.astro";
+import ArrowLink from "../components/ArrowLink.astro";
+import { getCollection } from "astro:content";
 
-const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <Layout subtitle="Blogs">
-    <Section>
-		<div class="flex justify-center">
-			<h1 class="text-black">
-				Blogs
-			</h1>
-		</div> 
-		<ul class="grid gap-12 md:gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-4 max-w-sm md:max-w-2xl mx-auto lg:max-w-none lg:mx-0">
-			{posts.map(post => (
-			<li class="text-black space-y-4 flex flex-col items-start text-left">
-				<h2 class="text-xl font-semibold mb-2">
-					{post.data.title}
-				</h2>
-				<DateTime date={post.data.pubDate} className="text-gray-500" />
-				<p class="text-md text-black font-medium text-balance">
-					{post.data.description}
-				</p>
-				<ArrowLink content="Leer más" link={`/blog/${post.data.slug}`} />
-			</li>
-			))}
-		</ul>
-    </Section>
+  <Section>
+    <div class="flex justify-center">
+      <h1 class="text-black">Blogs</h1>
+    </div>
+    <ul
+      class="mx-auto grid max-w-sm grid-cols-1 gap-12 py-4 md:max-w-2xl md:grid-cols-2 md:gap-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+    >
+      {
+        posts.map((post) => (
+          <li class="flex flex-col items-start space-y-4 text-left text-black">
+            <h2 class="mb-2 text-xl font-semibold">{post.data.title}</h2>
+            <DateTime date={post.data.pubDate} className="text-gray-500" />
+            <p class="text-md font-medium text-balance text-black">
+              {post.data.description}
+            </p>
+            <ArrowLink content="Leer más" link={`/blog/${post.data.slug}`} />
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
 
-    <Section previous="bg-white" currentColor="bg-section" />
+  <Section previous="bg-white" currentColor="bg-section" />
 </Layout>
