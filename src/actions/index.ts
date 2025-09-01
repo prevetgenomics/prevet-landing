@@ -2,6 +2,7 @@ import { ActionError, defineAction } from "astro:actions";
 import { z } from "astro/zod";
 
 import { Resend } from "resend";
+import { EMAIL } from "../config";
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const server = {
@@ -44,8 +45,8 @@ export const server = {
       }
 
       const { error } = await resend.emails.send({
-        from: "Contacto Prevet <onboarding@resend.dev>",
-        to: ["delivered@resend.dev"],
+        from: EMAIL.from,
+        to: [EMAIL.to],
         subject: "Interesado/a en la venta del kit",
         html: emailContent,
       });

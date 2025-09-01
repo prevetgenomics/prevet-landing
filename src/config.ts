@@ -4,3 +4,8 @@ export const SITE = {
   author: "Joaquín Gutierrez Benavente",
   lang: "es",
 } as const;
+
+export const EMAIL = {
+  from: "Contacto Prevet <onboarding@prevet.cl>",
+  to: "prevetgenomics@gmail.com",
+} as const;
