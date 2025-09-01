@@ -5,6 +5,8 @@ import DateTime from "../components/DateTime.astro";
 import ArrowLink from "../components/ArrowLink.astro";
 import { getCollection } from "astro:content";
 
+export const prerender = true;
+
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
