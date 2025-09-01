@@ -1,9 +1,9 @@
 ---
-import { SITE } from "../config";
+const contactPhone = import.meta.env.PUBLIC_CONTACT_PHONE;
 ---
 
 <a
-  href=`https://wa.me/${SITE.contact_phone}?text=Hola,quiero+participar+con+el+uso+del+kit`
+  href=`https://wa.me/${contactPhone}?text=Hola,quiero+participar+con+el+uso+del+kit`
   class="bg-accent-secondary hover:bg-accent-secondary/90 flex h-10 w-36 items-center justify-center rounded px-4 font-bold text-white"
 >
   Contactanos
