@@ -6,6 +6,6 @@ export const SITE = {
 } as const;
 
 export const EMAIL = {
-  from: "Contacto Prevet <onboarding@prevet.cl>",
+  from: "Contacto Prevet <onboarding@contacto.prevet.cl>",
   to: "prevetgenomics@gmail.com",
 } as const;
